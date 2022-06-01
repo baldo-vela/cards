@@ -18,6 +18,7 @@ defmodule Cards do
 
   def shuffle(deck) do
     # <[ String ]> -> shuffle -> <[ String ]>
+    IO.puts "Everyday I'm Shuffling!"
     Enum.shuffle(deck)
   end
 
