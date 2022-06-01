@@ -16,8 +16,9 @@ defmodule Cards do
     ["Ace", "Two", "Three"]
   end
 
-  def shuffle do
+  def shuffle(deck) do
     # <[ String ]> -> shuffle -> <[ String ]>
+    Enum.shuffle(deck)
   end
 
   def save do
