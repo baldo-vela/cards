@@ -22,6 +22,10 @@ defmodule Cards do
     Enum.shuffle(deck)
   end
 
+  def contains?(deck, card) do
+    Enum.member?(deck, card)
+  end
+
   def save do
     # <[ String ]> -> save -> < String > (path to saved file)
   end
