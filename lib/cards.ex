@@ -37,12 +37,14 @@ defmodule Cards do
   end
 
   def save(deck, filename) do
-    # <[ String ]> -> save -> < String > (path to saved file)
+    # <[ String ]> -> save -> < String > ('path to saved file')
     binary = :erlang.term_to_binary(deck)
     File.write(filename, binary)
   end
 
-  def load do
-    # < String > (path to saved file) -> load -> <[ String ]>
+  def load(filename) do
+    # < String > ('path to saved file') -> load -> <[ String ]>
+    {status, binary} = File.read(filename)
+    deck = :erlang.binary_to_term binary
   end
 end
