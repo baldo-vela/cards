@@ -44,12 +44,10 @@ defmodule Cards do
 
   def load(filename) do
     # < String > ('path to saved file') -> load -> <[ String ]>
-    {status, binary} = File.read(filename)
-
-    case status do
-      :ok ->
+    case File.read(filename) do
+      {:ok, binary} ->
         :erlang.binary_to_term binary
-      :error ->
+      {:error, _reason} ->
         "That file does not exist"
     end
 
